@@ -1,3 +1,23 @@
+Instructions
+------------
+
+
+* To Run server:
+        (fastapi dev main.py)
+        runs on: (127.0.0.1:8000)
+* routes:
+        /docs = fastApi docs/api test
+        /rate-password = rout to POST password text to
+* response shape:
+        {
+          "password": "password",
+          "score": 7.5,
+          "response": "Weak"
+        }
+         
+
+
+
 Assumptions/Initial Thoughts:
 -----------------------------
 
@@ -35,12 +55,17 @@ Implementation:
 5. Improving password rating algorithm
     - identify payload url for top 200 passwords list
         (https://nordpass.com/next/worst-passwords-list/2024/b2c/all.json)
-    - 
+    - Create a score based on the character distribution of password
+    - Create a score based on the character category (upper,lower,num and special) uniformity (i.e. have similar amounts of each)
+
+----------------------------------------------
+2 hour mark - steps 1 - 5 took approx. 2 hours
+----------------------------------------------
 
 Extras:
 -------
 
 6. Make a client website
     - use React
-
+ 
 7. Make a test

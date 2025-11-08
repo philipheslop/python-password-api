@@ -65,7 +65,10 @@ Implementation:
 Extras:
 -------
 
-6. Make a client website
+6. Make a client website (~45 mins - based on existing code/not built from scratch)
     - use React
+    - add CORS to api (to test on same machine)
  
-7. Make a test
+7. Make a test (~30 mins)
+    - install pytest
+        (pip install pytest)

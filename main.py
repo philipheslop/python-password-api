@@ -1,6 +1,7 @@
 from urllib.request import urlopen, Request
 from fastapi import Depends, FastAPI
 from fastapi.security import APIKeyHeader
+from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
 import os
 import json
@@ -9,6 +10,18 @@ import numpy as np
 load_dotenv() # Loading environment variables from .env
 
 app = FastAPI()
+origins = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    # add your deployed frontend origin(s) here
+]
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,     # use ["*"] only for local development
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],       # include custom headers like "x-key"
+)
 header_scheme = APIKeyHeader(name="x-key")
 request = Request(url=os.getenv("DATA_URL"), headers={"User-Agent": "Mozilla/5.0"})
 response = urlopen(request)

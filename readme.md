@@ -6,8 +6,8 @@ Instructions
         (fastapi dev main.py)
         runs on: (127.0.0.1:8000)
 * routes:
-        /docs = fastApi docs/api test
-        /rate-password = rout to POST password text to
+        - /docs = fastApi docs/api test
+        - /rate-password = route to POST password text to
 * response shape:
         {
           "password": "password",

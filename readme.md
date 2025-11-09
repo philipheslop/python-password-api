@@ -55,8 +55,10 @@ Implementation:
 5. Improving password rating algorithm
     - identify payload url for top 200 passwords list
         (https://nordpass.com/next/worst-passwords-list/2024/b2c/all.json)
-    - Create a score based on the character distribution of password
-    - Create a score based on the character category (upper,lower,num and special) uniformity (i.e. have similar amounts of each)
+    - I have attempted to compose a novel scoring system for passwords:
+    - Create a score based on the character distribution ('spread') of password (i.e. more variety is better)
+    - Create a score based on the character category (upper,lower,num and special) uniformity (i.e. have similar amounts of each - opposite of spread)
+    - I have used a basic statistical tool - Coefficient of Variation - to calulate these distribution based scores. This equation gives a measure of 'spread' of data. I have used the numpy library for this.
 
 ----------------------------------------------
 2 hour mark - steps 1 - 5 took approx. 2 hours
